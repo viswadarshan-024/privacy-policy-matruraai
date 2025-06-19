@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>மாற்றுரை (Maatruurai) - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #b4b4b4;
+            --accent: #667eea;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            padding: 0.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .lang-btn.active {
+            background: var(--primary-gradient);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #f093fb, #f5576c, #667eea, #764ba2);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 5s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Policy Sections */
+        .policy-content {
+            padding: 2rem 0;
+        }
+
+        .policy-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .policy-section:nth-child(1) { animation-delay: 0.1s; }
+        .policy-section:nth-child(2) { animation-delay: 0.2s; }
+        .policy-section:nth-child(3) { animation-delay: 0.3s; }
+        .policy-section:nth-child(4) { animation-delay: 0.4s; }
+        .policy-section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+            border-color: var(--accent);
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .policy-section p, .policy-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-section li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-emails {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .email-card {
+            background: var(--card-bg);
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .email-card:hover {
+            transform: translateY(-3px);
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--accent);
+        }
+
+        .email-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .researcher-credit {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .researcher-credit h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Language-specific content */
+        .content-en { display: block; }
+        .content-ta { display: none; }
+
+        body.tamil .content-en { display: none; }
+        body.tamil .content-ta { display: block; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .policy-section {
+                padding: 1.5rem;
+            }
+            
+            .contact-emails {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--glass-border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Particles -->
+    <script>
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.width = Math.random() * 10 + 5 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = `rgba(${Math.random() * 255}, ${Math.random() * 255}, 255, 0.5)`;
+            particle.style.borderRadius = '50%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = 20 + Math.random() * 10 + 's';
+            document.body.appendChild(particle);
+        }
+    </script>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="app-title">மாற்றுரை</h1>
+                <div class="language-toggle">
+                    <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+                    <button class="lang-btn" onclick="setLanguage('ta')">தமிழ்</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="content-en">Privacy Policy</h1>
+            <h1 class="content-ta">தனியுரிமைக் கொள்கை</h1>
+            <p class="content-en">Your privacy matters to us. Learn how Maatruurai protects your data.</p>
+            <p class="content-ta">உங்கள் தனியுரிமை எங்களுக்கு முக்கியம். மாற்றுரை உங்கள் தரவை எவ்வாறு பாதுகாக்கிறது என்பதை அறியுங்கள்.</p>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <main class="policy-content container">
+        <!-- Data Usage Section -->
+        <section class="policy-section">
+            <div class="section-icon">🔐</div>
+            <h2 class="content-en">1. Data Usage & Storage</h2>
+            <h2 class="content-ta">1. தரவின் பயன்பாடு மற்றும் சேமிப்பு</h2>
+            <p class="content-en">
+                We do <strong>not collect or store</strong> any personal information entered into the app. 
+                Your text input is only used <strong>temporarily</strong> for generating paraphrased output 
+                via a secure inference API and is <strong>not stored or reused</strong>.
+            </p>
+            <p class="content-ta">
+                இந்த செயலியில் நீங்கள் உள்ளிடும் தனிப்பட்ட தகவல்களை <strong>நாங்கள் சேகரிக்கவோ சேமிக்கவோ மாட்டோம்</strong>. 
+                உங்கள் உரை <strong>தற்காலிகமாக மட்டுமே</strong> பயன்படுகிறது, ஒரு பாதுகாப்பான AI சேவையின் மூலம் 
+                மாற்றுரை உருவாக்கப்படுகிறது. <strong>அது சேமிக்கப்படவோ, மீண்டும் பயன்படுத்தப்படவோ மாட்டாது</strong>.
+            </p>
+        </section>
+
+        <!-- Permissions Section -->
+        <section class="policy-section">
+            <div class="section-icon">🌐</div>
+            <h2 class="content-en">2. Permissions</h2>
+            <h2 class="content-ta">2. அனுமதிகள்</h2>
+            <p class="content-en">This app may request:</p>
+            <p class="content-ta">செயலி கேட்டுக்கொள்ளக்கூடிய அனுமதி:</p>
+            <ul>
+                <li class="content-en"><strong>Internet Access</strong> – Required for contacting our AI backend server.</li>
+                <li class="content-ta"><strong>இணைய அணுகல்</strong> – AI சேவையை தொடர்பு கொள்ள இது தேவைப்படுகிறது.</li>
+            </ul>
+        </section>
+
+        <!-- Third-Party Section -->
+        <section class="policy-section">
+            <div class="section-icon">🛡️</div>
+            <h2 class="content-en">3. No Third-Party Sharing</h2>
+            <h2 class="content-ta">3. மூன்றாம் தரப்புகளுடன் பகிர்வு இல்லை</h2>
+            <p class="content-en">
+                We do <strong>not share any data</strong> with third parties. The app is designed to 
+                <strong>prioritize user privacy</strong> and operate without unnecessary data access or tracking.
+            </p>
+            <p class="content-ta">
+                இந்த செயலி உங்கள் தரவுகளை <strong>மூன்றாம் தரப்புகளுடன் பகிருவதில்லை</strong>. 
+                இது <strong>பயனரின் தனியுரிமையை பாதுகாக்கும்</strong> வகையில் உருவாக்கப்பட்டுள்ளது.
+            </p>
+        </section>
+
+        <!-- Children's Privacy Section -->
+        <section class="policy-section">
+            <div class="section-icon">👶</div>
+            <h2 class="content-en">4. Children's Privacy</h2>
+            <h2 class="content-ta">4. குழந்தைகள் பாதுகாப்பு</h2>
+            <p class="content-en">
+                Our app does <strong>not knowingly collect data from children under 13</strong>. 
+                The content is educational and intended for general public use.
+            </p>
+            <p class="content-ta">
+                13 வயதிற்குக் குறைந்த குழந்தைகளிடமிருந்து <strong>தரவு சேகரிக்க எங்கள் செயலி நோக்கமற்றது</strong>. 
+                இது கல்விக்கான நோக்கில் பொதுமக்களுக்கு உருவாக்கப்பட்டுள்ளது.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="section-icon">📧</div>
+            <h2 class="content-en">5. Contact Us</h2>
+            <h2 class="content-ta">5. எங்களைத் தொடர்பு கொள்ள</h2>
+            <p class="content-en">For any questions, feedback, or privacy concerns, please contact:</p>
+            <p class="content-ta">எந்தவொரு கேள்வி, கருத்து அல்லது தனியுரிமை சார்ந்த குறைபாடுகளுக்கும், தயவுசெய்து எங்களைத் தொடர்பு கொள்ளுங்கள்:</p>
+            
+            <div class="contact-emails">
+                <div class="email-card">
+                    <a href="mailto:muthiraitce@gmail.com">muthiraitce@gmail.com</a>
+                </div>
+                <div class="email-card">
+                    <a href="mailto:viswadarshanrramiya@gmail.com">viswadarshanrramiya@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="researcher-credit">
+                <h3>Research & Development</h3>
+                <p>We acknowledge the dedicated research and development efforts by:</p>
+                <p><strong>Viswadarshan R R (2022–26)</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle
+        function setLanguage(lang) {
+            document.body.className = lang === 'ta' ? 'tamil' : '';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn:nth-child(${lang === 'en' ? 1 : 2})`).classList.add('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all policy sections
+        document.querySelectorAll('.policy-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
